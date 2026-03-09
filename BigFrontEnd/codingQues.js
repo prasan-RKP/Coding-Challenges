@@ -124,7 +124,6 @@ console.log(counter());
 counter.reset();
 console.log(counter());
 
-
 */
 
 
@@ -142,3 +141,89 @@ compare('5.0.1', '5.0.1')
 
 => so basically check the two string snd return the '1', '-1', '0' according to the above conditions.
 */
+
+/*
+const compare = (v1, v2) => {
+  let numV1 = Number(v1.split('.').join(''));
+  let numV2 = Number(v2.split('.').join(''));
+
+  if(numV1 > numV2) {
+    return 1;
+  }
+
+  else if(numV2 > numV1){
+    return -1;
+  }
+
+  else{
+    return 0;
+  }
+}
+
+console.log(compare('15.11.3', '5.4.411'))
+
+
+*/
+
+
+
+// Q.6) Please create a function model(state, element), to bind state.value to the HTMLInputElement element.
+
+/*
+Ques des -> 
+const input = document.createElement('input')
+const state = { value: 'BFE' }
+model(state, input)
+
+console.log(input.value) // 'BFE'
+state.value = 'dev'
+console.log(input.value) // 'dev'
+input.value = 'BFE.dev'
+input.dispatchEvent(new Event('change'))
+console.log(state.value) // 'BFE.dev'
+
+*/
+
+/*
+
+function model (state = {value:"BFE"}, element) {
+  element.value = state.value;
+  element.addEventListener('input', ()=> {
+    state.value = element.value;
+  })
+}
+
+*/
+
+
+// Q.7) Longest Substring Without Repeating Characters ? 
+
+// Ex-1 -> "abcabcbb" => "abc" => length = 3
+// Ex-2 -> "bbbbb" => "b" => length = 1
+// Ex-3 -> "pwwkew" => "wke" => length = 3
+
+
+let str = "pwwkew";
+let Longest = "";
+
+for(let i=0; i<str.length; i++) {
+  
+  let current = '' // to get a new 'current' value when the innerLop ends.
+
+  for(let j=i; j<str.length; j++) {
+
+    if(current.includes(str[j])){
+      break;
+    }
+
+    current += str[j];
+
+    if(current.length > Longest.length) { // to track longest subString 
+      Longest = current;
+    }
+
+  }
+}
+
+console.log(Longest);
+
