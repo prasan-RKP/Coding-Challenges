@@ -39,7 +39,7 @@ console.log(removeChars("abc"));
 
 // Q.2) Integer to Roman Numerials
 
-/*
+
 function integerToRoman(num) {
   const values = [
     1000, 900, 500, 400,
@@ -69,7 +69,7 @@ function integerToRoman(num) {
 
 console.log(integerToRoman(3420));
 
-*/
+
 
 
 
