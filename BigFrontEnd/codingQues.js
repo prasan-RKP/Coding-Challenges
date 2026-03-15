@@ -34,11 +34,8 @@ console.log(removeChars("abc"));
 
 */
 
-
-
-
 // Q.2) Integer to Roman Numerials
-
+/*
 
 function integerToRoman(num) {
   const values = [
@@ -70,9 +67,7 @@ function integerToRoman(num) {
 console.log(integerToRoman(3420));
 
 
-
-
-
+*/
 
 // Q.3) find the single integer in an array where every other integer appears twice.
 /*
@@ -94,7 +89,6 @@ for(let i=0; i<arr.length; i++){
 }
 
 */
-
 
 // Q.4) Please create a function count(), when called it should return how many times it has been called, count.reset() should also implemented.
 
@@ -125,8 +119,6 @@ counter.reset();
 console.log(counter());
 
 */
-
-
 
 // Q.5) Semver String compare;
 /*
@@ -165,8 +157,6 @@ console.log(compare('15.11.3', '5.4.411'))
 
 */
 
-
-
 // Q.6) Please create a function model(state, element), to bind state.value to the HTMLInputElement element.
 
 /*
@@ -195,14 +185,13 @@ function model (state = {value:"BFE"}, element) {
 
 */
 
-
-// Q.7) Longest Substring Without Repeating Characters ? 
+// Q.7) Longest Substring Without Repeating Characters ?
 
 // Ex-1 -> "abcabcbb" => "abc" => length = 3
 // Ex-2 -> "bbbbb" => "b" => length = 1
 // Ex-3 -> "pwwkew" => "wke" => length = 3
 
-
+/*
 let str = "pwwkew";
 let Longest = "";
 
@@ -216,9 +205,9 @@ for(let i=0; i<str.length; i++) {
       break;
     }
 
-    current += str[j];
+    current += str[j]; // 
 
-    if(current.length > Longest.length) { // to track longest subString 
+    if(current.length > Longest.length) { 
       Longest = current;
     }
 
@@ -226,4 +215,134 @@ for(let i=0; i<str.length; i++) {
 }
 
 console.log(Longest);
+
+*/
+
+// Q.8) Pick Up Stones
+/*
+
+There is a pile of n (n > 0) stones.
+
+Player A and Player B take turns to pick 1 or 2 stones from the pile. A starts first.
+
+Who picks the last stone loses the game.
+
+Now here is the question, is there a winning strategy for A or B ? If so, returns the player name. If there is none, return null.
+
+winningStonePicking(1)
+
+Answer pattern is  -> At n = 1, B wins.
+
+At n = 4, B wins.
+
+At n = 7, B wins.
+
+That means whenever n % 3 === 1, B wins.
+
+*/
+
+/*
+
+function pickUpStones (n){
+  if(n % 3 === 1) return "B";
+  return "A"
+}
+
+console.log(pickUpStones(3));
+
+*/
+
+// Q.9) Most frequently occuring character ?
+/*
+
+function mostFreqChar(str) {
+  let obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    if (obj[str[i]]) {
+      obj[str[i]]++;
+    } else {
+      obj[str[i]] = 1;
+    }
+  }
+
+  let maxChar = null;
+  let maxCount = 0;
+
+  for (const key in obj) {
+      if(obj[key] > maxCount){
+        maxCount = obj[key];
+        maxChar = key;
+      }
+  }
+
+  return maxChar;
+}
+
+console.log(mostFreqChar("abbccc"));
+
+*/
+
+// Q.10) Do use 'window.btoa()' method.
+//console.log(window.btoa('BFE.dev'));
+
+// Q.11) MegaStore offer Example
+
+/*
+1)standard -> dis(6%) -> weight = any
+2)seasonal -> dis(12%) ->  weight = any
+3) Weight -> weight <= 10 -> dis(6%)
+4) weight -> weight > 10 ->  dis(18%)
+
+*/
+
+
+/*
+
+const DiscountType = {
+  Standard: "Standard",
+  Seasonal: "Seasonal",
+  Weight: "Weight",
+};
+
+function getDiscountedPrice(cartWeight, totalPrice, discountType) {
+  let finalPrice = "";
+
+  if (discountType === "Standard") {
+    let dis = 6 / totalPrice;
+    let disval = dis * totalPrice;
+    finalPrice = totalPrice - disval;
+  }
+
+  if (discountType === "Seasonal") {
+    let dis = 12 / totalPrice;
+    let disval = dis * totalPrice;
+    finalPrice = totalPrice - disval;
+  }
+
+  if (discountType === "Weight" && cartWeight > 10) {
+    let dis = 18 / totalPrice; // 0.18
+    console.log(dis);
+    let disval = dis * totalPrice; // 18
+    console.log(disval);
+    finalPrice = totalPrice - disval; // 100 - 18
+  }
+
+  if (discountType === "Weight" && cartWeight <= 10) {
+    let dis = 6 / totalPrice;
+    let disval = dis * totalPrice;
+    finalPrice = totalPrice - disval;
+  }
+
+  return finalPrice;
+}
+
+
+console.log(getDiscountedPrice(12, 100, "Weight"));
+console.log(getDiscountedPrice(8, 100, "Weight"));
+
+
+*/
+
+
 

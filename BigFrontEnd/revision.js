@@ -1,63 +1,23 @@
+// Write a code to find a unrepeated subsstring.
 
-//find the single integer in an array where every other integer appears twice.
-/*
+let myStr = "pwwkew";
+let longest = "";
 
-*/
+for(let i=0; i<myStr.length; i++) {
+    let current = "";
 
-let arr = [1, 2, 3, 2, 1];
-let freq = {};
+    for(let j=i; j<myStr.length; j++) {
+        if(current.includes(myStr[j])) {
+            break;
+        }
 
-let res = "";
+        current += myStr[j];
 
-
- for(let i=0; i<arr.length; i++){
-    let num = arr[i];
-    freq[num] = (freq[num] || 0) + 1;
- }
-
-
- for (const key in freq) {
-     if(freq[key] === 1){
-        res += key
-     }
-    
-    
- }
-
-
- console.log(res);
-
-
-
-
- const count = () => {
-    let count = 0;
-
-    const func = function() {
-        count ++;
-        return count;
+        if(current.length > longest.length){
+            longest = current;
+        }
+        
     }
+}
 
-    func.reset = function(){
-        count = 0;
-    }
-
-    return func;
- }
-
-
- let fn = count();
-
- console.log(fn())
- console.log(fn())
- console.log(fn())
- console.log(fn())
- fn.reset();
- console.log(fn())
- console.log(fn())
- console.log(fn())
- console.log(fn())
-
-
- 
- 
+console.log(longest);
