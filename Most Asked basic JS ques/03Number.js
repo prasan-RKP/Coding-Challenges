@@ -9,4 +9,30 @@ function missingNumber(arr) {
     return expectedSum - actualSum;
 }
 
-console.log(missingNumber([1,2,4,5,6])) // 3
+console.log(missingNumber([1,2,4,5,6])) // 
+
+
+
+// Q.11) Fibonacci concept
+/*
+const makeFibonacci = (n) => {
+    let first = 0;
+    let second = 1;
+    let third;
+    let arr = [0, 1];
+
+    for(let i=0; i<n; i++) {
+        third = first + second; 
+        arr.push(third); 
+        first = second; 
+        second = third; 
+    }
+
+    return arr;
+}
+
+console.log(makeFibonacci(6));
+
+*/
+
+
