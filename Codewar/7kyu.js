@@ -1,4 +1,3 @@
-
 // Q.1) In this kata you need to create a function that takes a 2D array/list of non-negative integer pairs and returns the sum of all the "saving" that you can have getting the LCM of each couple of number compared to their simple product.
 
 /*
@@ -42,11 +41,10 @@ console.log("Final Result:", res);
 
 */
 
-
 // Q.2) Given an array, assume that from first to last item in the array, each implies the next (for example, in an array of three items p, q, and r: (p -> q) -> r). Return the boolean answer.
 //If the array is empty, return None, null or a similar empty value.There will be no more than 8 variables in the array, and the array will contain only boolean values.
 
-// inShort -> The logic is 
+// inShort -> The logic is
 
 /*
 function implication(p, q){
@@ -67,8 +65,6 @@ function chainImplication(arr){
 console.log(chainImplication([false, true]))
 
 */
-
-
 
 // Q.3) For every string, after every occurrence of 'and' and/or 'but', insert the substring 'apparently' directly after the occurrence(s).
 
@@ -100,8 +96,6 @@ console.log(apprently(str));
 
 */
 
-
-
 //Q.4) String Reordering
 /*
 Input:
@@ -132,5 +126,111 @@ console.log(sentence([
 ]))
 
 */
+
+// Q.5) Task Given a Divisor and a Bound , Find the largest integer N , Such That ,
+
+//Conditions :
+//N is divisible by divisor
+
+//N is less than or equal to bound
+
+//N is greater than 0.
+
+/*
+
+const maxMultiple = (divisor, bound) => {
+    //let ans = [];
+    let ans ;
+     for (let i=1; i<=bound; i++) {
+        if((i % divisor === 0) && (i <= bound) && (i > 0)){
+            //ans.push(i);
+            ans = i
+        }
+     }
+
+     return ans;
+}
+
+
+console.log(maxMultiple(2, 7));
+console.log(maxMultiple(10, 50));
+console.log(maxMultiple(37, 200));
+
+*/
+
+// Q.6) Minimize Sum Of Array (Array Series #1)
+// -> concept suppose 5 elmensts in an array we have return the minimun result of unique elemnts multiplication.
+
+/*
+const minSumArr = (arr) => {
+  let sortArr = arr.sort((a, b) => b - a);
+  console.log(sortArr);
+
+  let minVal = 0;
+  let length = arr.length;
+  for (let i = 0; i < sortArr.length / 2; i++) {
+    minVal += (sortArr[i]) * (sortArr[length - 1 - i]); // 26 * 3
+  }
+
+  return minVal;
+};
+
+console.log(minSumArr([12, 6, 10, 26, 3, 24]));
+console.log(minSumArr([9, 2, 8, 7, 5, 4, 0, 6]));
+console.log(minSumArr([5, 4, 2, 3]));
+*/
+
+// Q.7) Product Of Maximums Of Array (Array Series #2)
+// see the concept is we have to find the max multiplication value upto the size like array length 5 is and size = 2 so wenned to store 3 hghest number's val inside the result;
+/*
+const maxProduct = (numbers, size) => {
+    let sortArr = numbers.sort((a, b)=> b-a);
+    let slicedArr = sortArr.slice(0, size);
+
+    let res = 1;
+    for (const el of slicedArr) {
+         res = res * el;
+    }
+    return res;
+}
+
+
+console.log(maxProduct([10 , 10 , 8 , 4 , 3, 2, 1], 5));
+
+*/
+
+// Q.8) Array Leaders (Array Series #3)
+// ex - 1 arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4} -> return the elements which value is greter than all its right to it .
+// ex- 2 arrayLeaders ({16, 17, 4, 3, 5, 2}) ==> return {17, 5, 2}
+
+
+/*
+
+const arrayLeader = (nums) => {
+  let resArr = [];
+  for (let i = 0; i < nums.length; i++) {
+    let chooseEl = nums[i];
+    let newArr = nums.slice(i + 1);
+    let sum = 0;
+    for (let j = 0; j < newArr.length; j++) {
+      sum += newArr[j];
+    }
+
+    if (chooseEl > sum) {
+      resArr.push(chooseEl);
+    }
+  }
+
+  return resArr;
+};
+
+console.log(arrayLeader([1, 2, 3, 4, 0])); // 4
+console.log(arrayLeader([16, 17, 4, 3, 5, 2]));// 17, 5, 2
+console.log(arrayLeader([5, 2, -1])); // 5, 2
+
+
+*/
+
+
 
 
