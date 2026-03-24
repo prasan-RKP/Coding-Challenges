@@ -203,7 +203,6 @@ console.log(maxProduct([10 , 10 , 8 , 4 , 3, 2, 1], 5));
 // ex - 1 arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4} -> return the elements which value is greter than all its right to it .
 // ex- 2 arrayLeaders ({16, 17, 4, 3, 5, 2}) ==> return {17, 5, 2}
 
-
 /*
 
 const arrayLeader = (nums) => {
@@ -232,5 +231,41 @@ console.log(arrayLeader([5, 2, -1])); // 5, 2
 */
 
 
+// Q.9)Nth Smallest Element (Array Series #4)
+/*
+function nthSmallest(arr, pos) {
+  let sortArr = arr.sort((a, b) => a - b);
+  console.log(sortArr);
+
+  let val = sortArr[pos - 1];  // adjust for 0-based index
+  
+  return val;
+}
+
+console.log(nthSmallest([15,20,7,10,4,3], 3));
+
+*/
 
 
+// Q.10)Maximum Gap (Array Series #4)
+
+/*
+const maxGap = (numbers)  => {
+
+  let sortArr = numbers.sort((a,b)=> a-b);
+
+  let res = [];
+  // 2, 5, 9, 10, 13 // 3, 4, 1, 3
+
+  for(let i=1; i<sortArr.length; i++){
+     res.push(sortArr[i] - sortArr[i-1]);
+  }
+
+  return Math.max(...res);
+}
+
+console.log(maxGap([13,10,5,2,9])); // 4
+console.log(maxGap([-3,-27,-4,-2])); // 23
+console.log(maxGap([-7,-42,-809,-14,-12])); // 767
+
+*/
