@@ -12,7 +12,6 @@ function debounce(func, wait) {
 
 */
 
-
 // Q.2)  Create a simple store for DOM element
 /*
 class NodeStore {
@@ -37,9 +36,8 @@ class NodeStore {
 }
   */
 
-
 // Q.3) TO be not to Be
-// Note here we use (Object.is()) instead of (===) for all test case to resolve 
+// Note here we use (Object.is()) instead of (===) for all test case to resolve
 /*
 function myExpect(input) {
   // your code here
@@ -57,6 +55,7 @@ console.log(expect.not.tobe(4)); // false
 */
 
 // Q.4) Roman to Intger
+/*
 function romanToInteger(str) {
   const map = {
     I: 1,
@@ -87,8 +86,67 @@ function romanToInteger(str) {
   return res;
 }
 
-console.log(romanToInteger("MCMXCIX")); // 1999
-
 console.log(romanToInteger("MCMXCIX")); 
 // 1999
 
+*/
+
+// Q.5) A Number Sequnce
+// Question detial on Examples 
+/*
+n = 1  
+Start with "1" (this is given as the first term).
+
+n = 2  
+Look at the previous term "1".
+It has one 1 → so we write "11".
+
+n = 3  
+Look at the previous term "11".
+It has two 1s → so we write "21".
+
+n = 4  
+Look at the previous term "21".
+It has one 2, one 1 → so we write "1211".
+
+n = 5  
+Look at the previous term "1211".
+It has one 1, one 2, two 1s → so we write "111221"
+*/
+
+// answer
+/*
+function getLength(n) {
+  
+  if(n<= 0 ) return "";
+  // for n = 4;
+
+  let res = "1"
+
+ for(let step = 1; step < n; step ++) {
+  let nextResult = "";
+      for(let i=0; i<res.length; i++) {
+        let count = 1;
+        while(i + 1 < res.length && res[i] === res[i+1]){
+          count ++;
+          i++;
+        }
+        nextResult += count + res[i];
+      }
+
+      res = nextResult;
+ }
+ return res;
+}
+
+*/
+
+
+
+// Q.6) Implemnt your Math.sqrt();
+
+/*
+function getSQRT(num){
+  return Math.floor(Math.sqrt(num));
+}
+  */

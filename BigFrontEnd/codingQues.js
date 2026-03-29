@@ -345,4 +345,21 @@ console.log(getDiscountedPrice(8, 100, "Weight"));
 */
 
 
+// ----  Ayncchronous questions --------
+// Q.1) Classic debounce
+/*
+function debounce(func, wait) {
+  // your code here
+  let timeId;
+  return function(...args) {
+   clearTimeout(timeId);
+  timeId = setTimeout(()=> func(...args), wait);
+  }
+}
 
+*/
+
+
+// Q.2) implement Array.prototype.flat()
+
+console.log([1, [2], [3, [4]]].flat(1));
