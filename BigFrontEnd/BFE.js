@@ -150,3 +150,59 @@ function getSQRT(num){
   return Math.floor(Math.sqrt(num));
 }
   */
+
+
+
+// Q.7) Semver compare
+
+/*
+
+function compare (v1, v2) {
+
+  let arr1 = Number(v1.split('.').map(Number));
+  let arr2 = Number(v2.split('.').map(Number));
+
+  let max = Math.max(arr1.length, arr2.length);
+
+  for(let i=0; i<max; i++) {
+    let el1 = arr1[i];
+    let el2 = arr2[i];
+
+    if(el1 > el2){
+      return 1;
+    }
+    if(el1 < el2){
+      return 2;
+    }
+
+    if(el1 === el2){
+      return 0;
+    }
+
+  }
+  
+}
+
+const arr1 = '15.11.3'.split('.').map(Number);
+console.log(arr1);
+
+
+*/
+
+
+function createCounter() {
+  let val = 0;
+
+  return {
+    get count() {
+      return val++;
+    }
+  };
+}
+
+const counter = createCounter();
+
+console.log(counter.count); // 0
+console.log(counter.count); // 1
+console.log(counter.count); // 2
+              // 1
